@@ -1,0 +1,79 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=<YOUR API KEY HERE>"></script>
+<script type="text/javascript" src="./js.js"></script>
+<script src="./locationpicker.jquery.js"></script>
+<body style="font-family: Arial; border: 0 none;">
+   
+    <div id="map-canvas" style="width: 100%; height: 90%"></div>
+    <!--
+    <div id="points">Points go here</div>
+    <br />
+    <div id="randCoord">Random coordinate goes here</div>
+    <br />-->
+    <div id="buttonClick">Should Display the random coordinate once the button is clicked</div>  
+    <br />
+    <input type="button"" id="calcRoute" onClick="calcRoute()" Value="calcRoute" />
+
+
+
+         <table style="width:100%">
+          <tr>
+                <th>Source</th>
+                <th>Destination</th>
+          </tr>
+          <tr>
+                <td>
+                        <p>Source Zone Selector</p>
+                        Location: <input type="text" id="source-address" style="width: 200px"/>
+                        Radius: <input type="text" id="source-radius"/>
+                        <div id="source" style="width: 500px; height: 400px;"></div>
+                        Lat.: <input type="text" id="source-lat"/>
+                        Long.: <input type="text" id="source-lon"/>
+                        <script>
+                                $('#source').locationpicker({
+                                        location: {
+                                                latitude: 42.36061921399547,
+                                                longitude: -83.03649535937501
+                                        },
+                                        radius: 1000,
+                                        inputBinding: {
+                                                latitudeInput: $('#source-lat'),
+                                                longitudeInput: $('#source-lon'),
+                                                radiusInput: $('#source-radius'),
+                                                locationNameInput: $('#source-address')
+                                        }
+                                });
+                        </script>
+
+                </td>
+                <td>
+                        <p>Destination Zone Selector</p>
+                        Location: <input type="text" id="destination-address" style="width: 200px"/>
+                        Radius: <input type="text" id="destination-radius"/>
+                        <div id="destination" style="width: 500px; height: 400px;"></div>
+                        Lat.: <input type="text" id="destination-lat"/>
+                        Long.: <input type="text" id="destination-lon"/>
+                        <script>
+                                $('#destination').locationpicker({
+                                        location: {
+                                                latitude: 42.373747527755945,
+                                                longitude: -82.989129359375
+                                        },
+                                        radius: 1000,
+                                        inputBinding: {
+                                                latitudeInput: $('#destination-lat'),
+                                                longitudeInput: $('#destination-lon'),
+                                                radiusInput: $('#destination-radius'),
+                                                locationNameInput: $('#destination-address')
+                                        }
+                                });
+                        </script>
+                </td>
+          </tr>
+        </table> 
+
+        <p>Routes Data (for filtering and custom data generation)</p> </br>
+        <textarea id="routesOutput" rows="10" cols="120"></textarea>
+        <input type="button"" id="applyCustomData" onClick="applyCustomData()" Value="applyCustomData" />
+
+</body>

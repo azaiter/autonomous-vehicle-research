@@ -1,0 +1,17 @@
+{
+  "name": "routes-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compute.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mapbox/polyline": "^1.0.0",
+    "@turf/turf": "^5.1.6",
+    "turf-point-on-line": "^3.0.12",
+    "uuid": "^3.3.2"
+  }
+}
